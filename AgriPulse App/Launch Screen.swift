@@ -12,6 +12,7 @@ struct LaunchScreen: View {
     
     var body: some View {
         NavigationView {
+           
             VStack(alignment: .center) {
                 
                 Image("AgriPulse.logo")
@@ -81,6 +82,7 @@ struct LaunchScreen: View {
                     
             }
             .padding()
+            .navigationBarBackButtonHidden(true)
         }
     }
 }
