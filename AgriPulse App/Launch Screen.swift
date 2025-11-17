@@ -12,7 +12,8 @@ struct LaunchScreen: View {
     
     var body: some View {
         NavigationView {
-            VStack {
+           
+            VStack(alignment: .center) {
                 
                 Image("AgriPulse.logo")
                     .resizable()
@@ -31,7 +32,7 @@ struct LaunchScreen: View {
                     .scaledToFit()
                     .scaleEffect(scale)
                     .onAppear{
-                        withAnimation(.easeOut(duration: 2.0)) {
+                        withAnimation(.easeOut(duration: 1.0)) {
                             scale = 1.0
                         }
                     }
@@ -44,30 +45,44 @@ struct LaunchScreen: View {
                     .scaledToFit()
                     .scaleEffect(scale)
                     .onAppear{
-                        withAnimation(.easeOut(duration: 2.0)) {
+                        withAnimation(.easeOut(duration: 1.0)) {
                             scale = 1.0
                         }
                     }
                 
-                NavigationLink("Get Started"){HomeScreen()}
-                    .scaledToFit()
-                    .scaleEffect(scale)
-                    .onAppear{
-                        withAnimation(.easeOut(duration: 2.0)) {
-                            scale = 1.0
+                NavigationLink{LogIn()
+                    
+                } label: {
+                    RoundedRectangle(cornerRadius: 40)
+                        .offset(x: 58)
+                        .frame(width: 200, height: 80)
+                        .foregroundColor(.green)
+                        .scaledToFit()
+                        .scaleEffect(scale)
+                        .onAppear{
+                            withAnimation(.easeInOut(duration: 1.0)) {
+                                scale = 1.0
+                            }
                         }
-                    }
-                
-                .padding()
-                .frame(width: 200, height: 60)
-                .background(
-                    RoundedRectangle(cornerRadius: 20)
-                        .fill(Color.green)
-                )
-                .foregroundColor(.white)
-                .font(.headline)
+                    
+                    Text("Get Started")
+                        .font(.system(size: 18))
+                        .offset(x: -100)
+                        .font(.title2)
+                        .fontWeight(.bold)
+                        .foregroundStyle(.white)
+                        .scaledToFit()
+                        .scaleEffect(scale)
+                        .onAppear{
+                            withAnimation(.easeOut(duration: 1.0)) {
+                                scale = 1.0
+                            }
+                        }
+                }
+                    
             }
             .padding()
+            .navigationBarBackButtonHidden(true)
         }
     }
 }
