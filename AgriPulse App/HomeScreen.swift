@@ -57,10 +57,10 @@ struct HomeScreen: View {
            return formatter.string(from: Date())
        }
        
-       // Get the weekday index 0...6 (Sunday = 0)
+       // weekday index
        func weekdayIndex() -> Int {
            let calendar = Calendar.current
-           let weekday = calendar.component(.weekday, from: Date()) // 1 = Sunday, ... 7 = Saturday
+           let weekday = calendar.component(.weekday, from: Date())
            return weekday - 1
        }
        

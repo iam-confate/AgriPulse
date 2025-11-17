@@ -8,10 +8,39 @@
 import SwiftUI
 
 struct Profile: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-            .navigationBarBackButtonHidden(true)
-    }
+    
+    @Environment(\.dismiss) private var dismiss
+      @State private var goHome = true
+    
+      var body: some View {
+          ZStack {
+              Button(action: {
+                  goHome = true
+              }) {
+                  Image(systemName: "chevron.left")
+                      .font(.title2)
+                      .foregroundColor(.yellow)
+              }
+              Color.green
+                  .ignoresSafeArea()
+              RoundedRectangle(cornerRadius: 30)
+                  .fill(.white)
+                  .offset(y: 180)
+                    Circle()
+                        .fill(.white)
+                        .frame(width: 150, height: 150)
+                        .overlay(
+                            Image(systemName: "person.fill")
+                                .resizable()
+                                .frame(width: 75, height: 75)
+                                .foregroundStyle(.green)
+                        )
+                        .offset(y: -280)
+              
+              
+                    
+          }
+      }
 }
 
 #Preview {

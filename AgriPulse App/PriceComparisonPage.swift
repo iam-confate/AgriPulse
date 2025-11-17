@@ -90,6 +90,7 @@ struct PriceComparisonPage: View {
                                Text(item)
                            }
                        }
+                       .tint(.green)
                        .pickerStyle(MenuPickerStyle())
                        .frame(width: 140)
                    }
@@ -112,6 +113,7 @@ struct PriceComparisonPage: View {
                                    x: .value("Time", labels[index]),
                                    y: .value("Price", price)
                                )
+                               .foregroundStyle(Color.green)
                                .symbol(.circle)
                                .interpolationMethod(.cardinal)
                            }

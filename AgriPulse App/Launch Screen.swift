@@ -50,7 +50,7 @@ struct LaunchScreen: View {
                         }
                     }
                 
-                NavigationLink{MainTabView()
+                NavigationLink{LogIn()
                     
                 } label: {
                     RoundedRectangle(cornerRadius: 40)
